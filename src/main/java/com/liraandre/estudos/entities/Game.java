@@ -9,26 +9,26 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "tb_game")
+@Entity //Define a Entity como uma tabela no banco de dados relacional
+@Table(name = "tb_game") // altera o nome da tabela gerada
 public class Game {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id // define o id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)// identifica o id como como uma PK
 	private Long id;
 	private String title;
 	
-	@Column(name = "game_year")
+	@Column(name = "game_year")// altera o nome da coluna pois year é uma palavra reservada
 	private Integer year;
 	private String genre;
 	private String platforms;
 	private Double score;
 	private String imgUrl;
 	
-	@Column(columnDefinition = "TEXT")
+	@Column(columnDefinition = "TEXT") // define a coluna como uma texto para aceitar mais de 255 caracteres
 	private String shortDescription;
 
-	@Column(columnDefinition = "TEXT")
+	@Column(columnDefinition = "TEXT") // define a coluna como uma texto para aceitar mais de 255 caracteres
 	private String longDescription;
 	
     public Game() {
